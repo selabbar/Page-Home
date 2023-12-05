@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Assignment 3</title>
 <style>
-  
+    body {
+  font-family: "A Day Without Sun Text";
+}
      html {
         background: url(author.png) no-repeat center fixed;
         background-size: cover;
       }
   
-.overlay {
+.sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -21,62 +23,64 @@
   background-color: #01062e;
   overflow-x: hidden;
   transition: 0.5s;
+  padding-top: 60px;
 }
 
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.overlay a {
-  padding: 8px;
+.sidenav a {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 36px;
+  font-size: 25px;
   color: white;
   display: block;
   transition: 0.3s;
 }
 
-.overlay a:hover, .overlay a:focus {
+.sidenav a:hover {
   color: #3f3848;
 }
 
-.overlay .closebtn {
+.sidenav .closebtn {
   position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
 
 </style>
 </head>
 <body>
 
-<div id="myNav" class="overlay">
+<div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <a href="https://selabbar.github.io/Page-Home/">Home</a>
-    <a href="https://selabbar.github.io/Books-page/">Books</a>
-    <a href="https://selabbar.github.io/Genres-page/">Genre</a>
-    <a href="https://selabbar.github.io/Assignment-3/">About</a>
-  </div>
+  <a href="#">Home</a>
+  <a href="https://selabbar.github.io/Books-page/">Books</a>
+  <a href="https://selabbar.github.io/Books-page/">Genres</a>
+  <a href="https://selabbar.github.io/Assignment-3/">About</a>
 </div>
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<div id="main">
+
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
 
 <script>
 function openNav() {
-  
-  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
 }
 </script>
-     
+   
 </body>
-</html>
+</html> 
